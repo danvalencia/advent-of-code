@@ -29,7 +29,6 @@ function findHashForSecretWith5Zeroes(prefix) {
     let hashedSecret = hashTheSecret(secret);
     console.log(`MD5 for Secret ${secret} is ${hashedSecret}`);
 
-    let letterCount = 0;
     if(startsWithNZeroes(hashedSecret, 5)) {
       return num;
     }
