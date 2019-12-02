@@ -9,12 +9,15 @@ class FuelCalculatorTest(unittest.TestCase):
     self.assertEqual(main.calculate_fuel(100756), 33583)
 
   def test_total_fuel_calculation(self):
-    self.assertEqual(main.calculate_total('input', main.calculate_fuel), 3249140)
+    self.assertEqual(main.aggregate_from_file('input', main.calculate_fuel), 3249140)
 
   def test_fuel_inception_calculation(self):
     self.assertEqual(main.calculate_fuel_inception(12), 2)
     self.assertEqual(main.calculate_fuel_inception(1969), 966)
     self.assertEqual(main.calculate_fuel_inception(100756), 50346)
+
+  def test_total_fuel_inception_calculation(self):
+    self.assertEqual(main.aggregate_from_file('input', main.calculate_fuel_inception), 4870838)
 
 if __name__ == '__main__':
     unittest.main()
